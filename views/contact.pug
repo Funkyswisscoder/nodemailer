@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="css/sanitize.css")
+        link(rel="stylesheet", href="css/styles.css")
+        title #{title}
+    body
+        section
+            if h1
+              h1 #{h1}
+            else
+                h1 Nous contacter
+            p.flash #{flash}
+            form(method="POST" action="/")
+                label(for="name") Prénom :
+                input#name(type="text" placeholder="Prénom" name="name")
+                label(for="email") Mail :
+                input#email(type="email" placeholder="Email" name="email")
+                label(for="message") Message :
+                textarea#message(name="message", cols="30", rows="10")
+                button(type="submit") Envoyer
